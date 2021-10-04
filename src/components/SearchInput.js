@@ -10,6 +10,10 @@ const StyledSearchInput = styled.input`
   &::placeholder {
     color: ${({theme}) => theme.textPrimary};
   }
+
+  @media screen and (max-width: 600px){
+      width: 100%;
+  }
 `
 
 

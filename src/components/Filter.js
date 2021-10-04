@@ -5,6 +5,10 @@ const StyledFilter = styled.select`
   color: ${({theme}) => theme.textPrimary};
   border: none;
   padding: 1em;
+
+  @media screen and (max-width: 600px){
+      width: 50%;
+  }
 `;
 
 export default function Filter({ options }) {
