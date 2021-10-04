@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledDetails = styled.div`
     display: grid;
@@ -54,7 +55,7 @@ export default function Details({ countries }) {
     const languages = country.languages.map(language => language.name).join(', ');
     const borders = !country.borders ? '-' : country.borders.map(border => {
         const borderCountry = countries.find(country => country.alpha3Code === border);
-        return <Border key={borderCountry.name}>{borderCountry.name}</Border>
+        return <Link to={`/details/${borderCountry.name}`}><Border key={borderCountry.name}>{borderCountry.name}</Border></Link>;
     });
 
     return (
