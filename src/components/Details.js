@@ -44,6 +44,7 @@ const Border = styled.div`
     cursor: pointer;
     background-color: ${({theme}) => theme.primary};
     padding: 0.3em;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export default function Details({ countries }) {
