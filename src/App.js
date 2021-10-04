@@ -37,7 +37,7 @@ function App() {
   });
 
   const cards = filteredCards.map((country, index) => {
-    return <Card key={index} country={country}/>;
+    return <Card key={index} country={country} onClick={handleOnClickCard}/>;
   })
 
   function handleOnClickDarkModeButton(e) {
@@ -51,6 +51,10 @@ function App() {
 
   function handleOnChangeInput(e) {
     setSearchInput(e.target.value);
+  }
+
+  function handleOnClickCard(e) {
+    console.log("Card clicked!");
   }
 
   return (

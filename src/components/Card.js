@@ -29,9 +29,9 @@ const CountryInfo = styled.div`
   }
 `
 
-export default function Card({ country }) {
+export default function Card({ country, onClick }) {
     return (
-        <StyledCard>
+        <StyledCard onClick={onClick}>
             <img src={country.flag} alt={country.name}/>
             <CountryInfo>
                 <h3>{country.name}</h3>
@@ -44,5 +44,6 @@ export default function Card({ country }) {
 }
 
 Card.defaultProps = {
-    country: {}
+    country: {},
+    onClick: () => console.warn("Unimplemented onClick")
 }
