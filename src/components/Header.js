@@ -1,20 +1,11 @@
 import styled from "styled-components";
+import Container from "./Container";
+import FlexBetween from "./FlexBetween";
 
 const StyledHeader = styled.div`
     width: 100%;
     background-color: ${({theme}) => theme.primary};
     padding-block: 1em;
-`;
-
-const Container = styled.div`
-    width: 90%;
-    margin: auto;
-`;
-
-const FlexBetween = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 `;
 
 export default function Header() {
