@@ -82,7 +82,7 @@ export default function Details({ countries }) {
                 <Info>
                     <div>
                         <p><span>Native Name:</span> {country.nativeName}</p>
-                        <p><span>Population:</span> {numberWithCommas(country.population)}</p>
+                        <p><span>Population:</span> {numberWithCommas(country.population)   }</p>
                         <p><span>Region:</span> {country.region}</p>
                         <p><span>Sub Region:</span> {country.subregion}</p>
                         <p><span>Capital:</span> {country.capital}</p>
