@@ -12,6 +12,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route} from "react-router-dom";
+import Details from "./components/Details";
 
 const regions = data.reduce((prev, curr) => {
   if (!prev.includes(curr.region)){
@@ -67,7 +68,7 @@ function App() {
             </Cards>
           </Route>
           <Route exact path="/details/:countryName">
-            <p>WOW</p>
+            <Details countries={data}/>
           </Route>
         </Switch>
       </ThemeProvider>
