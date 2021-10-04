@@ -2,8 +2,8 @@
 
 This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-### [Visit the live page]()
-#### [The page is mobile-friendly]()
+### [Visit the live page](https://rest-countries-api-with-color-theme-switcher-master-theta.vercel.app/)
+#### [The page is mobile-friendly](https://search.google.com/test/mobile-friendly?id=_2EAaFZCial4Yze2KpSAZA)
 
 ## Overview
 
@@ -40,7 +40,6 @@ I learned how to fetch data from an external API and convert it into a Javascrip
 
 - Frontend Mentor - [@calvindalenta](https://www.frontendmentor.io/profile/calvindalenta)
 - LinkedIn - [@calvindalenta](https://www.linkedin.com/in/calvindalenta/)
-
 
 ### Screenshot
 
