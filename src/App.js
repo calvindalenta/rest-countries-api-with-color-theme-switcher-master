@@ -12,11 +12,26 @@ import Card from "./components/Card";
 import Cards from "./components/Cards";
 import { useState } from "react";
 
+const regions = data.reduce((prev, curr) => {
+  if (!prev.includes(curr.region)){
+    prev.push(curr.region);
+  }
+  return prev;
+}, []);
+
+
 function App() {
 
   const [isDarkTheme, setDarkTheme] = useState(true);
+  const [regionFilter, setRegionFilter] = useState("");
 
-  const cards = data.map((country, index) => {
+  const filteredCards = data.filter(country => {
+    if (!regionFilter) return true;
+    if (country.region === regionFilter) return true;
+    return false;
+  })
+
+  const cards = filteredCards.map((country, index) => {
     return <Card key={index} country={country}/>;
   })
 
@@ -24,11 +39,16 @@ function App() {
     setDarkTheme(!isDarkTheme)
   }
 
+  function handleOnChangeFilter(e) {
+    console.log(e.target.value)
+    setRegionFilter(e.target.value);
+  }
+
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
-      <Controls />
+      <Controls options={regions} onChangeFilter={handleOnChangeFilter}/>
       <Cards>
         {cards}
       </Cards>

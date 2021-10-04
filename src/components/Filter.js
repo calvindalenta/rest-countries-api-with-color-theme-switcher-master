@@ -12,11 +12,11 @@ const StyledFilter = styled.select`
   }
 `;
 
-export default function Filter({ options }) {
+export default function Filter({ options, onChangeFilter }) {
     const optionsView = options.map(item => <option key={item} value={item}>{item}</option>);
 
     return (
-        <StyledFilter name="Regions">
+        <StyledFilter name="Regions" onChange={onChangeFilter}>
             <option hidden>Filter by region</option>
             {optionsView}
         </StyledFilter>
@@ -24,5 +24,6 @@ export default function Filter({ options }) {
 }
 
 Filter.defaultProps = {
-    options: []
+    options: [],
+    onChangeFilter: () => console.warn("Unimplemented onChangeFilter")
 }
