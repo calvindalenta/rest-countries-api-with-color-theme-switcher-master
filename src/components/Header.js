@@ -8,13 +8,21 @@ const StyledHeader = styled.div`
     padding-block: 1em;
 `;
 
+const DarkModeButton = styled.button`
+  cursor: pointer;
+  background-color: ${({theme}) => theme.primary};
+  color: ${({theme}) => theme.textPrimary};
+  border: 1px solid ${({theme}) => theme.textPrimary};
+  padding: 0.5em 1em;
+`;
+
 export default function Header() {
   return (
     <StyledHeader>
         <Container>
             <FlexBetween>
                 <h2>Where in the world?</h2>
-                <button>Dark Mode</button>
+                <DarkModeButton>☽ Dark Mode</DarkModeButton>
             </FlexBetween>
         </Container>
     </StyledHeader>
