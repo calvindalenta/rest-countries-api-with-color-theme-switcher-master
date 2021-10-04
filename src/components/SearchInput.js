@@ -1,11 +1,15 @@
 import styled from "styled-components"
 
 const StyledSearchInput = styled.input`
-  width: 50%;
+  width: 30%;
   background-color: ${({theme}) => theme.primary};
   color: ${({theme}) => theme.textPrimary};
   border: none;
   padding: 1em;
+
+  &::placeholder {
+    color: ${({theme}) => theme.textPrimary};
+  }
 `
 
 
