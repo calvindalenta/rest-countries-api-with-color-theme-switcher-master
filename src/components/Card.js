@@ -31,13 +31,19 @@ const CountryInfo = styled.div`
 `
 
 export default function Card({ country }) {
+    
+    // Source: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     return (
       <Link to={`details/${country.name}`}>
         <StyledCard>
             <img src={country.flag} alt={country.name}/>
             <CountryInfo>
                 <h3>{country.name}</h3>
-                <p><span>Population:</span> {country.population}</p>
+                <p><span>Population:</span> {numberWithCommas(country.population)}</p>
                 <p><span>Region:</span> {country.region}</p>
                 <p><span>Capital:</span> {country.capital}</p>
             </CountryInfo>
