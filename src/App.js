@@ -1,11 +1,7 @@
-import styled, { ThemeProvider } from "styled-components";
-import Filter from "./components/Filter";
-import SearchInput from "./components/SearchInput";
+import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./components/GlobalStyle";
 import Header from "./components/Header";
 import { darkTheme, lightTheme } from "./theme";
-import Container from "./components/Container";
-import FlexBetween from "./components/FlexBetween";
 import Controls from "./components/Controls";
 import data from "./mockData";
 import Card from "./components/Card";
@@ -15,9 +11,7 @@ import { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
-} from "react-router-dom";
+  Route} from "react-router-dom";
 
 const regions = data.reduce((prev, curr) => {
   if (!prev.includes(curr.region)){
@@ -65,15 +59,17 @@ function App() {
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
-        <Route exact path="/">
-          <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
-          <Cards>
-            {cards}
-          </Cards>
-        </Route>
-        <Route exact path="/details/:countryName">
-          Wow!
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
+            <Cards>
+              {cards}
+            </Cards>
+          </Route>
+          <Route exact path="/details/:countryName">
+            <p>WOW</p>
+          </Route>
+        </Switch>
       </ThemeProvider>
     </Router>
   );
