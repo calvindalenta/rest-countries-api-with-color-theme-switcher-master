@@ -24,12 +24,17 @@ function App() {
 
   const [isDarkTheme, setDarkTheme] = useState(true);
   const [regionFilter, setRegionFilter] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   const filteredCards = data.filter(country => {
     if (!regionFilter) return true;
     if (country.region === regionFilter) return true;
     return false;
-  })
+  }).filter(country => {
+    if (!searchInput) return true;
+    if (country.name.includes(searchInput)) return true;
+    return false;
+  });
 
   const cards = filteredCards.map((country, index) => {
     return <Card key={index} country={country}/>;
@@ -45,7 +50,7 @@ function App() {
   }
 
   function handleOnChangeInput(e) {
-    console.log(e.target.value)
+    setSearchInput(e.target.value);
   }
 
   return (
