@@ -70,7 +70,7 @@ export default function Details({ countries }) {
     const languages = country.languages.map(language => language.name).join(', ');
     const borders = !country.borders ? '-' : country.borders.map(border => {
         const borderCountry = countries.find(country => country.alpha3Code === border);
-        return <Link to={`/details/${borderCountry.name}`}><Border key={borderCountry.name}>{borderCountry.name}</Border></Link>;
+        return <Link to={`/details/${borderCountry.name}`} key={borderCountry.name}><Border>{borderCountry.name}</Border></Link>;
     });
 
     return (
