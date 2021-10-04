@@ -18,6 +18,7 @@ export default function Filter({ options, onChangeFilter }) {
     return (
         <StyledFilter name="Regions" onChange={onChangeFilter}>
             <option hidden>Filter by region</option>
+            <option value="">No Filter</option>
             {optionsView}
         </StyledFilter>
     );
