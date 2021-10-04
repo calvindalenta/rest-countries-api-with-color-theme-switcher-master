@@ -6,7 +6,6 @@ const StyledSearchInput = styled.input`
   color: ${({theme}) => theme.textPrimary};
   border: none;
   padding: 0 1em;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 
   &::placeholder {
     color: ${({theme}) => theme.textPrimary};
