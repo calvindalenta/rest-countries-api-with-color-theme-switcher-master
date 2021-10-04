@@ -16,8 +16,8 @@ function App() {
 
   const [isDarkTheme, setDarkTheme] = useState(true);
 
-  const cards = data.map(country => {
-    return <Card country={country}/>;
+  const cards = data.map((country, index) => {
+    return <Card key={index} country={country}/>;
   })
 
   function handleOnClickDarkModeButton(e) {
