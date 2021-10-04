@@ -83,7 +83,7 @@ function App() {
               {cards}
             </Cards>
           </Route>
-          <Route exact path="/details/:countryName">
+          <Route exact path="/details/:countryCode">
             <Container>
               <Link to="/">
                 <BackButton>

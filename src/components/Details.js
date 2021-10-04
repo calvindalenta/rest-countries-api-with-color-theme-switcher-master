@@ -65,13 +65,13 @@ const Border = styled.div`
 `;
 
 export default function Details({ countries }) {
-    const { countryName } = useParams();
-    const country = countries.find((country) => country.name === countryName);
+    const { countryCode } = useParams();
+    const country = countries.find((country) => country.alpha3Code === countryCode);
     const currencies = country.currencies.map(currency => currency.name).join(', ');
     const languages = country.languages.map(language => language.name).join(', ');
     const borders = !country.borders ? '-' : country.borders.map(border => {
         const borderCountry = countries.find(country => country.alpha3Code === border);
-        return <Link to={`/details/${borderCountry.name}`} key={borderCountry.name}><Border>{borderCountry.name}</Border></Link>;
+        return <Link to={`/details/${borderCountry.alpha3Code}`} key={borderCountry.name}><Border>{borderCountry.name}</Border></Link>;
     });
 
     return (

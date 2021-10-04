@@ -33,7 +33,7 @@ const CountryInfo = styled.div`
 
 export default function Card({ country }) {
     return (
-      <Link to={`details/${country.name}`}>
+      <Link to={`details/${country.alpha3Code}`}>
         <StyledCard>
             <img src={country.flag} alt={country.name}/>
             <CountryInfo>
