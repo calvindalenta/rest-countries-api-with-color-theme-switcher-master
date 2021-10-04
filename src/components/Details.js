@@ -59,7 +59,7 @@ const Borders = styled.div`
 const Border = styled.div`
     cursor: pointer;
     background-color: ${({theme}) => theme.primary};
-    padding: 0.3em;
+    padding: 0.3em 1em;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 `;
 
