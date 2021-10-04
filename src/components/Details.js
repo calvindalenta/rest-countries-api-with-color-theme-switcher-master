@@ -15,6 +15,11 @@ const StyledDetails = styled.div`
             font-weight: 600;
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 3em;
+    }
 `;
 
 const CountryDetails = styled.div`
@@ -26,12 +31,22 @@ const CountryDetails = styled.div`
 const Info = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
 `;
 
 const BorderWrap = styled.div`
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 1em;   
+    }
 `;
 
 const Borders = styled.div`
