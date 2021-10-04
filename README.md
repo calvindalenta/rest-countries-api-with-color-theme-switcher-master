@@ -38,10 +38,13 @@ I learned how to fetch data from an external API and convert it into a Javascrip
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/calvindalenta)
-- LinkedIn - [@yourusername](https://www.linkedin.com/in/calvindalenta/)
+- Frontend Mentor - [@calvindalenta](https://www.frontendmentor.io/profile/calvindalenta)
+- LinkedIn - [@calvindalenta](https://www.linkedin.com/in/calvindalenta/)
 
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot-1](./screenshots/screenshot-1.png)
+![Screenshot-2](./screenshots/screenshot-2.png)
+![Screenshot-3](./screenshots/screenshot-3.png)
+![Screenshot-4](./screenshots/screenshot-4.png)
