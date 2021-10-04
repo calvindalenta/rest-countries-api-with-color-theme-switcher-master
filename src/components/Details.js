@@ -31,10 +31,10 @@ const CountryDetails = styled.div`
 const Info = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1em;
 
     @media screen and (max-width: 1024px) {
         grid-template-columns: 1fr;
-        gap: 1em;
     }
 `;
 

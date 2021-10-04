@@ -34,7 +34,6 @@ function App() {
   useEffect(() => {
     fetch("https://restcountries.com/v2/all").then(res => {
       res.json().then(json => {
-        console.log(json);
         setData(json);
       });
     });
