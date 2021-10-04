@@ -12,6 +12,13 @@ import Card from "./components/Card";
 import Cards from "./components/Cards";
 import { useState } from "react";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const regions = data.reduce((prev, curr) => {
   if (!prev.includes(curr.region)){
     prev.push(curr.region);
@@ -58,14 +65,21 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
-      <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
-      <Cards>
-        {cards}
-      </Cards>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
+        <Route exact path="/">
+          <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
+          <Cards>
+            {cards}
+          </Cards>
+        </Route>
+        <Route exact path="/details/:countryName">
+          Wow!
+        </Route>
+      </ThemeProvider>
+    </Router>
   );
 }
 
