@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     img {
         max-width: 100%;
     }
+
+    a {
+        text-decoration: none;
+        color: ${({theme}) => theme.textPrimary};
+    }
 `;
 
 export default GlobalStyle;
