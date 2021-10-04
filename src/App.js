@@ -9,6 +9,7 @@ import FlexBetween from "./components/FlexBetween";
 import Controls from "./components/Controls";
 import data from "./mockData";
 import Card from "./components/Card";
+import Cards from "./components/Cards";
 
 function App() {
 
@@ -21,7 +22,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <Controls />
-      {cards}
+      <Cards>
+        {cards}
+      </Cards>
     </ThemeProvider>
   );
 }
