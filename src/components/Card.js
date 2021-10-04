@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 const StyledCard = styled.div`
@@ -29,9 +30,10 @@ const CountryInfo = styled.div`
   }
 `
 
-export default function Card({ country, onClick }) {
+export default function Card({ country }) {
     return (
-        <StyledCard onClick={onClick}>
+      <Link to={`details/${country.name}`}>
+        <StyledCard>
             <img src={country.flag} alt={country.name}/>
             <CountryInfo>
                 <h3>{country.name}</h3>
@@ -40,10 +42,10 @@ export default function Card({ country, onClick }) {
                 <p><span>Capital:</span> {country.capital}</p>
             </CountryInfo>
         </StyledCard>
+      </Link>
     );
 }
 
 Card.defaultProps = {
     country: {},
-    onClick: () => console.warn("Unimplemented onClick")
 }
