@@ -3,10 +3,10 @@ import GlobalStyle from "./components/GlobalStyle";
 import Header from "./components/Header";
 import { darkTheme, lightTheme } from "./theme";
 import Controls from "./components/Controls";
-import data from "./mockData";
+// import data from "./mockData";
 import Card from "./components/Card";
 import Cards from "./components/Cards";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   BrowserRouter as Router,
@@ -17,18 +17,28 @@ import Details from "./components/Details";
 import Container from "./components/Container";
 import BackButton from "./components/BackButton";
 
-const regions = data.reduce((prev, curr) => {
-  if (!prev.includes(curr.region)){
-    prev.push(curr.region);
-  }
-  return prev;
-}, []);
-
 function App() {
 
   const [isDarkTheme, setDarkTheme] = useState(true);
   const [regionFilter, setRegionFilter] = useState("");
   const [searchInput, setSearchInput] = useState("");
+  const [data, setData] = useState([]);
+
+  const regions = data.reduce((prev, curr) => {
+    if (!prev.includes(curr.region)){
+      prev.push(curr.region);
+    }
+    return prev;
+  }, []);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v2/all").then(res => {
+      res.json().then(json => {
+        console.log(json);
+        setData(json);
+      });
+    });
+  }, [])
 
   const filteredCards = data.filter(country => {
     if (!regionFilter) return true;
