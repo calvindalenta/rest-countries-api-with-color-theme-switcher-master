@@ -72,6 +72,11 @@ function App() {
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
+        { 
+        data.length === 0 
+        ? 
+        <Container><h2>Loading...</h2></Container> 
+        : 
         <Switch>
           <Route exact path="/">
             <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
@@ -91,6 +96,7 @@ function App() {
             </Container>
           </Route>
         </Switch>
+        }
       </ThemeProvider>
     </Router>
   );
