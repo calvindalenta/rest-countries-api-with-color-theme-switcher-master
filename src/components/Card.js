@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components"
+import { numberWithCommas } from "../utils";
 
 const StyledCard = styled.div`
   /* border: 1px solid red; */
@@ -31,12 +32,6 @@ const CountryInfo = styled.div`
 `
 
 export default function Card({ country }) {
-    
-    // Source: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-    function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
     return (
       <Link to={`details/${country.name}`}>
         <StyledCard>
