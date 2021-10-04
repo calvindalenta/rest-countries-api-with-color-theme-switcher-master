@@ -16,15 +16,19 @@ const DarkModeButton = styled.button`
   padding: 0.5em 1em;
 `;
 
-export default function Header() {
+export default function Header({ onClickDarkModeButton }) {
   return (
     <StyledHeader>
         <Container>
             <FlexBetween>
                 <h2>Where in the world?</h2>
-                <DarkModeButton>☽ Dark Mode</DarkModeButton>
+                <DarkModeButton onClick={onClickDarkModeButton}>☽ Dark Mode</DarkModeButton>
             </FlexBetween>
         </Container>
     </StyledHeader>
   );
+}
+
+Header.defaultProps = {
+  onClickDarkModeButton: () => console.warn("Unimplemented onClickDarkModeButton")
 }
