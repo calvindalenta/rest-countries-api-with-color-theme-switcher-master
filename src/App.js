@@ -11,8 +11,11 @@ import { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route} from "react-router-dom";
+  Route,
+  Link} from "react-router-dom";
 import Details from "./components/Details";
+import Container from "./components/Container";
+import BackButton from "./components/BackButton";
 
 const regions = data.reduce((prev, curr) => {
   if (!prev.includes(curr.region)){
@@ -20,7 +23,6 @@ const regions = data.reduce((prev, curr) => {
   }
   return prev;
 }, []);
-
 
 function App() {
 
@@ -68,7 +70,15 @@ function App() {
             </Cards>
           </Route>
           <Route exact path="/details/:countryName">
-            <Details countries={data}/>
+            <Container>
+              <Link to="/">
+                <BackButton>
+                  <span>←</span> 
+                  <span>Back</span>
+                </BackButton>
+              </Link>
+              <Details countries={data}/>
+            </Container>
           </Route>
         </Switch>
       </ThemeProvider>

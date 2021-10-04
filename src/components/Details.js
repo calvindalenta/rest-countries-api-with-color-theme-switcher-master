@@ -1,8 +1,7 @@
 import { useParams } from "react-router";
 import styled from "styled-components";
-import Container from "./Container";
 
-const StyledDetails = styled(Container)`
+const StyledDetails = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
