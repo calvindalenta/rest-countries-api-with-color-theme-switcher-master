@@ -4,6 +4,7 @@ const StyledCard = styled.div`
   /* border: 1px solid red; */
   width: 300px;
   background-color: ${({theme}) => theme.primary};
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 
   img {
     object-fit: cover;

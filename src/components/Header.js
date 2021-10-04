@@ -6,6 +6,7 @@ const StyledHeader = styled.div`
     width: 100%;
     background-color: ${({theme}) => theme.primary};
     padding-block: 1em;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const DarkModeButton = styled.button`
