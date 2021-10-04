@@ -44,11 +44,15 @@ function App() {
     setRegionFilter(e.target.value);
   }
 
+  function handleOnChangeInput(e) {
+    console.log(e.target.value)
+  }
+
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Header onClickDarkModeButton={handleOnClickDarkModeButton}/>
-      <Controls options={regions} onChangeFilter={handleOnChangeFilter}/>
+      <Controls options={regions} onChangeFilter={handleOnChangeFilter} onChangeInput={handleOnChangeInput}/>
       <Cards>
         {cards}
       </Cards>

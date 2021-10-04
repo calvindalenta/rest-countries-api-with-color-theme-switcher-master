@@ -15,11 +15,11 @@ const StyledControls = styled(FlexBetween)`
   }
 `
 
-export default function Controls({ options, onChangeFilter }) {
+export default function Controls({ options, onChangeFilter, onChangeInput }) {
     return (
         <Container>
             <StyledControls>
-                <SearchInput type="text" placeholder="Search for a country"/>
+                <SearchInput onChangeInput={onChangeInput}/>
                 <Filter options={options} onChangeFilter={onChangeFilter}/>
             </StyledControls>
         </Container>
@@ -28,5 +28,6 @@ export default function Controls({ options, onChangeFilter }) {
 
 Controls.defaultProps = {
     options: [],
-    onChangeFilter: () => console.warn("Unimplemented onChangeFilter")
+    onChangeFilter: () => console.warn("Unimplemented onChangeFilter"),
+    onChangeInput: () => console.warn("Unimplemented onChangeInput")
 }

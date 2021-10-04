@@ -18,8 +18,13 @@ const StyledSearchInput = styled.input`
 `
 
 
-export default function SearchInput() {
+export default function SearchInput({ onChangeInput }) {
     return (
-        <StyledSearchInput type="text" placeholder="Search for a country"/>
+        <StyledSearchInput type="text" placeholder="Search for a country" onChange={onChangeInput}/>
     );
+}
+
+
+SearchInput.defaultProps = {
+    onChangeInput: () => console.warn("Unimplemented onChangeInput")
 }
