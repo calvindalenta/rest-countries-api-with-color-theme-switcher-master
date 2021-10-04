@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 const StyledCard = styled.div`
-  border: 1px solid red;
-  max-width: 300px;
+  /* border: 1px solid red; */
+  width: 300px;
   background-color: ${({theme}) => theme.primary};
 
   img {
