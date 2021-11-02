@@ -1,35 +1,13 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components"
-import { numberWithCommas } from "../utils";
 
-const StyledCard = styled.div`
-  /* border: 1px solid red; */
-  width: 300px;
-  background-color: ${({theme}) => theme.primary};
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+import { numberWithCommas } from "../../utils";
 
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-  }
-`;
+import CountryInfo from "../../styled/CountryInfo";
+import StyledCard from "../../styled/StyledCard";
 
-const CountryInfo = styled.div`
-  padding: 0 2em 2em 2em;
-
-  h3 {
-    padding-block: 1em;
-  }
-
-  p {
-    padding-block: 0.3em;
-
-    span {
-      font-weight: 600;
-    }
-  }
-`
+Card.defaultProps = {
+    country: {},
+}
 
 export default function Card({ country }) {
     return (
@@ -45,8 +23,4 @@ export default function Card({ country }) {
         </StyledCard>
       </Link>
     );
-}
-
-Card.defaultProps = {
-    country: {},
 }

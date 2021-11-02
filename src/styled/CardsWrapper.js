@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Container from "./Container";
 
-const Cards = styled(Container)`
+const CardsWrapper = styled(Container)`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
   justify-items: center;
   gap: 1.5em;
   /* display: flex;
@@ -16,4 +18,4 @@ const Cards = styled(Container)`
   } */
 `;
 
-export default Cards;
+export default CardsWrapper;

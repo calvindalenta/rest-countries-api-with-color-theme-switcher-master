@@ -1,7 +1,6 @@
-import { useParams } from "react-router";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { numberWithCommas } from "../utils";
+import { numberWithCommas } from "../../utils";
 
 const StyledDetails = styled.div`
     display: grid;
@@ -23,7 +22,7 @@ const StyledDetails = styled.div`
     }
 `;
 
-const CountryDetails = styled.div`
+const StyledCountryDetails = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
@@ -64,28 +63,25 @@ const Border = styled.div`
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 `;
 
-export default function Details({ countries }) {
-    const { countryCode } = useParams();
-    const country = countries.find((country) => country.alpha3Code === countryCode);
-    const currencies = country.currencies.map(currency => currency.name).join(', ');
-    const languages = country.languages.map(language => language.name).join(', ');
-    const borders = !country.borders ? '-' : country.borders.map(border => {
-        const borderCountry = countries.find(country => country.alpha3Code === border);
-        return <Link to={`/details/${borderCountry.alpha3Code}`} key={borderCountry.name}><Border>{borderCountry.name}</Border></Link>;
+export default function CountryDetails({ country, borderingCountries }) {
+    const currencies = !country.currencies ? '-' : country.currencies.map(currency => currency.name).join(', ');
+    const languages = !country.currencies ? '-' : country.languages.map(language => language.name).join(', ');
+    const borders = !borderingCountries ? '-' : borderingCountries.map(country => {
+        return <Link to={`/details/${country.alpha3Code}`} key={country.name}><Border>{country.name}</Border></Link>;
     });
 
     return (
         <StyledDetails>
             <img src={country.flag} alt={country.name} />
-            <CountryDetails>
+            <StyledCountryDetails>
                 <h2>{country.name}</h2>
                 <Info>
                     <div>
                         <p><span>Native Name:</span> {country.nativeName}</p>
                         <p><span>Population:</span> {numberWithCommas(country.population)   }</p>
-                        <p><span>Region:</span> {country.region}</p>
-                        <p><span>Sub Region:</span> {country.subregion}</p>
-                        <p><span>Capital:</span> {country.capital}</p>
+                        <p><span>Region:</span> {!country.region ? '-' : country.region}</p>
+                        <p><span>Sub Region:</span> {!country.subregion ? '-' : country.subregion}</p>
+                        <p><span>Capital:</span> {!country.capital ? '-' : country.capital}</p>
                     </div>
                     <div>
                         <p><span>Top Level Domain:</span> {country.topLevelDomain}</p>
@@ -99,11 +95,8 @@ export default function Details({ countries }) {
                         {borders}
                     </Borders>
                 </BorderWrap>
-            </CountryDetails>
+            </StyledCountryDetails>
         </StyledDetails>
     );
 }
 
-Details.defaultProps = {
-    countries: []
-}
