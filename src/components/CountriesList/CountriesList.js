@@ -7,9 +7,9 @@ import { selectRegionFilter, selectKeywordFilter } from "../../state/ducks/filte
 import CountriesListItem from "./CountriesListItem";
 import CardsWrapper from "../../styled/CardsWrapper";
 
-export function CardsList({ countries }){
+export function CountriesList({ countries }){
     const cards = countries.map((country, index) => {
-        return <CountriesListItem key={index} country={country}/>;
+        return <CountriesListItem key={country.alpha3Code} country={country}/>;
     })
 
     return (
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(CardsList)
+export default connect(mapStateToProps)(CountriesList)

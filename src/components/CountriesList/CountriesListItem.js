@@ -5,11 +5,11 @@ import { numberWithCommas } from "../../utils";
 import CountryInfo from "../../styled/CountryInfo";
 import StyledCard from "../../styled/StyledCard";
 
-Card.defaultProps = {
+CountriesListItem.defaultProps = {
     country: {},
 }
 
-export default function Card({ country }) {
+export default function CountriesListItem({ country }) {
     return (
       <Link to={`details/${country.alpha3Code}`}>
         <StyledCard>

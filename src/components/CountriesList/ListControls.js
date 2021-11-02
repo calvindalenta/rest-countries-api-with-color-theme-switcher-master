@@ -8,13 +8,13 @@ import StyledControls from "../../styled/StyledControls";
 import SearchInput from "../../UI/SearchInput/SearchInput";
 import Filter from "../../UI/Filter";
 
-Controls.defaultProps = {
+ListControls.defaultProps = {
     options: [],
     onChangeFilter: () => console.warn("Unimplemented onChangeFilter"),
     onChangeInput: () => console.warn("Unimplemented onChangeInput")
 }
 
-export function Controls({ options, setKeyword, setRegion }) {
+export function ListControls({ options, setKeyword, setRegion }) {
     function onChangeInput(e) {
         setKeyword(e.target.value)
     }
@@ -41,5 +41,5 @@ const mapDispatchToProps = {
     setRegion
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Controls)
+export default connect(mapStateToProps, mapDispatchToProps)(ListControls)
 

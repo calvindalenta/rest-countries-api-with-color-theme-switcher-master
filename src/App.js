@@ -11,8 +11,8 @@ import { darkTheme, lightTheme } from "./theme";
 
 import GlobalStyle from "./styled/GlobalStyle";
 
-import CountriesList from "./pages/CountriesList";
-import CountryDetails from "./pages/CountryDetails";
+import CountriesListPage from "./pages/CountriesListPage";
+import CountryDetailsPage from "./pages/CountryDetailsPage";
 
 function App({ isDarkTheme }) {
   return (
@@ -20,8 +20,8 @@ function App({ isDarkTheme }) {
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Switch>
-          <Route exact path="/" component={CountriesList} />
-          <Route exact path="/details/:countryCode" component={CountryDetails}/>
+          <Route exact path="/" component={CountriesListPage} />
+          <Route exact path="/details/:countryCode" component={CountryDetailsPage}/>
         </Switch>
       </ThemeProvider>
     </Router>
