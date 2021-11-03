@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from './state/store';
-import { getAllCountries } from './state/ducks/countries/actions';
+import { fetchCountries } from './state/ducks/countries/actions';
 
 import App from './App';
 
-store.dispatch(getAllCountries())
+store.dispatch(fetchCountries())
 
 ReactDOM.render(
   <React.StrictMode>

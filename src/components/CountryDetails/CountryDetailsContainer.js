@@ -27,8 +27,12 @@ export function CountryDetailsContainer({ isLoaded, country, borderingCountries 
 
 const mapStateToProps = (state, ownProps) => {
     const { countryCode } = ownProps.match.params
+    const isLoaded = selectIsDataLoaded(state)
+
+    if (!isLoaded) return { isLoaded }
+
     return { 
-        isLoaded: selectIsDataLoaded(state),
+        isLoaded,
         country: selectCountryByCode(state, countryCode),
         borderingCountries: selectCountryBorderingCountries(state, countryCode)
     }
